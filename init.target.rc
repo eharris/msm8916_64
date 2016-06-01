@@ -151,6 +151,8 @@ on boot
     chown system drmrpc /sys/devices/soc.0/78b9000.i2c/i2c-5/5-0020/secure_touch
     chown system drmrpc /sys/devices/soc.0/78b9000.i2c/i2c-5/5-0070/secure_touch_enable
     chown system drmrpc /sys/devices/soc.0/78b9000.i2c/i2c-5/5-0070/secure_touch
+    write /sys/class/leds/lcd-backlight/brightness 50
+
 
 service wcnss-service /system/bin/wcnss_service
     class main
@@ -241,3 +243,7 @@ on property:sys.boot_completed=1
     start imsdatadaemon
     start ims_rtp_daemon
     start wcnss-service
+	write /sys/class/gpio/export 998
+	write /sys/class/gpio/gpio998/direction out
+	write /sys/class/gpio/gpio998/value 1
+	
