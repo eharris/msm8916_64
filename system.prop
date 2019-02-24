@@ -168,3 +168,6 @@ ro.core_ctl_max_cpu=4
 
 # system property for PIP support
 persist.camera.pip.support=0
+
+# enable soft keys
+qemu.hw.mainkeys=0
